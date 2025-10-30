@@ -1,0 +1,972 @@
+/* ============================================
+   CAFÉ DU COMMERCE - STYLE PRINCIPAL
+   Version complète recodée et optimisée
+   Auteur: Site créé à 15 ans 🚀
+   ============================================ */
+
+/* ========== TABLE DES MATIÈRES ==========
+   1. Reset & Base
+   2. Navigation
+   3. Hero Section
+   4. Sections communes
+   5. Cocktails & Cards
+   6. Panel latéral
+   7. Pages spécifiques
+   8. Footer
+   9. Animations
+   10. Responsive Design
+   ========================================== */
+
+
+/* ===========================================
+   1. RESET & BASE
+   =========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  background-color: #121212;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Container global */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ===========================================
+   2. NAVIGATION
+   =========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  font-size: 1.8rem;
+  color: #f4b400;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu desktop */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f4b400, #ffcc00);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f4b400;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  width: 100%;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #f4b400;
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+
+/* ===========================================
+   3. HERO SECTION
+   =========================================== */
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  background: url('images/wine-8346641_1280.jpg') center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(18, 18, 18, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero h1 {
+  font-family: 'Lobster', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 span {
+  color: #f4b400;
+  display: inline-block;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-bottom: 35px;
+  color: #e0e0e0;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ===========================================
+   4. BOUTONS
+   =========================================== */
+
+.btn {
+  display: inline-block;
+  padding: 14px 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: #fff4f4;
+  cursor: pointer;
+  transition: background 2s ease, box-shadow 2s ease, transform 0.4s ease;
+  
+  background-color: rgba(244, 180, 0, 0.7) ;
+  animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+
+
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(244, 180, 0, 0.7);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* ===========================================
+   5. SECTIONS COMMUNES
+   =========================================== */
+
+.histoire,
+.bar-intro {
+  padding: 100px 20px;
+  background: #1a1a1a;
+}
+
+.histoire h2,
+.bar-intro h2,
+.cocktails h2,
+.bar-ambiance h2 {
+  font-family: 'Lobster', cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #f4b400;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.histoire h2::after,
+.cocktails h2::after,
+.bar-ambiance h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #f4b400, #ffcc00);
+  border-radius: 2px;
+}
+
+/* Histoire content */
+.histoire-content,
+.bar-intro-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.histoire-text,
+.bar-intro-text {
+  flex: 1;
+}
+
+.histoire-text p,
+.bar-intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+.histoire-image,
+.bar-intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.histoire-image img,
+.bar-intro-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.histoire-image img:hover,
+.bar-intro-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 50px rgba(244, 180, 0, 0.7);
+}
+
+
+/* ===========================================
+   6. COCKTAILS & CARDS
+   =========================================== */
+
+.cocktails {
+  padding: 100px 20px;
+  background: #222222;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards optimisées */
+.card {
+  background: #2a2a2a;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 180, 0, 0) 0%,
+    rgba(244, 180, 0, 0.15) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+.card h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+  color: #f4b400;
+  padding: 20px 20px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.card .preview {
+  padding: 0 20px 25px;
+  color: #aaaaaa;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(244, 180, 0, 0.5);
+}
+
+
+/* ===========================================
+   7. PANEL LATÉRAL
+   =========================================== */
+
+.cocktail-panel {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 100%;
+  max-width: 550px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  overflow-y: auto;
+  transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cocktail-panel.active {
+  right: 0;
+}
+
+/* Scrollbar personnalisée */
+.cocktail-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cocktail-panel::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.cocktail-panel::-webkit-scrollbar-thumb {
+  background: #f4b400;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  background: #f4b400;
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.panel-content {
+  padding: 40px 30px;
+  color: #333333;
+  animation: panelContentFadeIn 0.7s ease 0.2s both;
+}
+
+.panel-content img {
+  width: 80%;
+  max-width: 380px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 0 auto 35px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.panel-content h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+  color: #f4b400;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#panelDescription {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555555;
+  margin-bottom: 35px;
+  text-align: justify;
+}
+
+.panel-details {
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.panel-details h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#panelIngredients {
+  margin-bottom: 30px;
+}
+
+#panelIngredients li {
+  padding: 14px 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555555;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#panelIngredients li:last-child {
+  border-bottom: none;
+}
+
+#panelIngredients li::before {
+  content: "✓";
+  color: #f4b400;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-right: 12px;
+}
+
+.panel-price {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #f4b400 0%, #ff6b6b 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(244, 180, 0, 0.4);
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay */
+.panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1999;
+}
+
+.panel-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ===========================================
+   8. PAGE BAR
+   =========================================== */
+
+.bar-hero {
+  height: 75vh;
+  min-height: 550px;
+  background: url('images/bar.jpg') center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(244, 180, 0, 0.25) 100%
+  );
+}
+
+.bar-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.bar-hero h1 {
+  font-family: 'Lobster', cursive;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.bar-hero h1 span {
+  color: #f4b400;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.bar-hero p {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #f0f0f0;
+  margin-bottom: 35px;
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.btn-bar {
+  background: linear-gradient(135deg, #f4b400 0%, #ff6b6b 100%);
+  padding: 16px 45px;
+}
+
+.btn-bar:hover {
+  background: linear-gradient(135deg, #ffcc00 0%, #ff8787 100%);
+}
+
+/* Section Ambiance */
+.bar-ambiance {
+  padding: 100px 20px;
+  background: #0f0f0f;
+}
+
+.ambiance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ambiance-card {
+  background: rgba(244, 180, 0, 0.05);
+  border: 2px solid rgba(244, 180, 0, 0.15);
+  border-radius: 20px;
+  padding: 50px 35px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ambiance-card:hover {
+  background: rgba(244, 180, 0, 0.12);
+  border-color: #f4b400;
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(244, 180, 0, 0.35);
+}
+
+.ambiance-card i {
+  font-size: 4rem;
+  color: #f4b400;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.ambiance-card:hover i {
+  transform: scale(1.15);
+}
+
+.ambiance-card h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 1.9rem;
+  color: #f4b400;
+  margin-bottom: 18px;
+}
+
+.ambiance-card p {
+  font-size: 1.05rem;
+  color: #bbbbbb;
+  line-height: 1.8;
+}
+
+
+/* ===========================================
+   9. PAGE RESTAURANT
+   =========================================== */
+
+.page-content {
+  min-height: 85vh;
+  background: url('images/wine-8346641_1280.jpg') center/cover fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 80px;
+}
+
+.restaurant {
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  max-width: 950px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease;
+}
+
+.restaurant h1 {
+  font-family: 'Lobster', cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #f4b400;
+  margin-bottom: 25px;
+}
+
+.restaurant p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #dddddd;
+  margin-bottom: 35px;
+}
+
+.restaurant-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.restaurant-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===========================================
+   10. FOOTER
+   =========================================== */
+
+footer {
+  background: #0a0a0a;
+  border-top: 3px solid #1a1a1a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #888888;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-links a {
+  color: #777777;
+  font-size: 30px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover {
+  color: #f4b400;
+  transform: translateY(-5px) scale(1.1);
+}
+
+
+/* ===========================================
+   11. ANIMATIONS
+   =========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-20);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 15px #f4b400, 0 0 25px #f4b400;
+  }
+  to {
+    text-shadow: 0 0 25px #f4b400, 0 0 40px #f4b400, 0 0 55px #f4b400;
+  }
+}
+
+@keyframes panelContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ===========================================
+   12. RESPONSIVE DESIGN
+   =========================================== */
+
+/* Tablettes (768px et moins) */
+@media (max-width: 768px) {
+  /* Navigation mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.6rem;
+  }
+
+  .nav-links.active li {
+    animation: slideIn 0.6s ease both;
+  }
+
+  .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
+  .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
+  .nav-links.active li:nth-child(4) { animation-delay: 0.4s; }
+
+  /* Sections */
+  .histoire-content,
+  .bar-intro-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .cocktail-panel {
+    max-width: 100%;
+    right: -100%;
+  }
+
+  .ambiance-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Mobiles (480px et moins) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero,
+  .bar-hero {
+    min-height: 500px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 280px;
+  }
+
+  .panel-content {
+    padding: 30px 20px;
+  }
+
+  .panel-content img {
+    width: 90%;
+    height: 300px;
+  }
+
+  .price {
+    font-size: 2.8rem;
+  }
+
+  .restaurant {
+    padding: 35px 25px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+  .hero h1,
+  .bar-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .card img {
+    height: 240px;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café du Commerce</title>
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;700&display=swap' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script>
+  function randomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  // Changer la couleur du bouton toutes les 2 secondes
+  setInterval(() => {
+    const btn = document.querySelector('.btn');
+    if (btn) {
+      btn.style.backgroundColor = randomColor();
+    }
+  }, 2000);
+</script>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">Café du Commerce</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="Bar.html">Bar</a></li>
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+    </ul>
+
+    <!-- Bouton hamburger -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header class="hero">
+
+    <div class="hero-content">
+      <h1>Bienvenue au <span>Café du Commerce🍸</span></h1>
+      <p>Des cocktails raffinés dans une ambiance unique</p>
+      <a href="bar.html#cocktails-bar" class="btn">Voir nos cocktails</a>
+    </div>
+  </header>
+
+  <section id="Histoire" class="histoire">
+    <div class="container">
+        <h2>Notre Histoire</h2>
+        <div class="histoire-content">
+            <div class="histoire-text">
+                <p>Situé au cœur de Pavilly, le Café du Commerce vous accueille depuis 2007. Notre établissement allie tradition et modernité pour vous offrir une expérience unique.</p>
+                <p>Découvrez notre sélection de cocktails signature, préparés avec passion par notre équipe de mixologues.</p>
+            </div>
+            <div class="histoire-image">
+                <img src="images/cafe-du-commerce-scaled.jpg" alt="Café du Commerce">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ 
+
+
+
+ 
+<footer>
+    <p>© 2025 Café du Commerce — Tous droits réservés</p>
+    <ul class="social-links">
+            <li><a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="wow.js"></scriptsrc></script>
+</body>
+</html>

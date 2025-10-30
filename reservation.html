@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café du Commerce</title>
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;700&display=swap' rel='stylesheet'>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="formulaire.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Café du Commerce</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="Bar.html">Bar</a></li>
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <section class="reservation-section">
+    <div class="reservation-container">
+      <h1>Réservez votre table</h1>
+      <p>Pour profiter d'une expérience unique dans notre bar/restaurant, remplissez ce formulaire :</p>
+      
+      <form class="reservation-form" action="https://formspree.io/f/mzzkgeop" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Votre email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Votre numéro">
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date">
+          <div id="dateError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Heure (18h-23h)</label>
+          <input type="time" id="time" name="time" min="18:00" max="23:00">
+          <div id="timeError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Nombre de personnes</label>
+          <input type="number" id="guests" name="guests" min="1" max="20" placeholder="1">
+        </div>
+
+        <div class="form-group">
+          <label for="requests">Demandes spéciales</label>
+          <textarea id="requests" name="requests" rows="4" placeholder="Allergies, anniversaires, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Réserver maintenant</button>
+      </form>
+
+      <div id="formMessage"></div>
+    </div>
+  </section>
+
+  <!-- Script séparé -->
+  <script src="scriptréservation.js"></script>
+  <script src="wow.js"></scriptsrc></script>
+</body>
+</html>

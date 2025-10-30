@@ -1,0 +1,108 @@
+.reservation-section {
+  background: url('images/bar.jpg') center/cover no-repeat fixed;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation-container {
+  background: rgba(0,0,0,0.8);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(244,180,0,0.3);
+}
+
+.reservation-container h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+  color: #f4b400;
+  margin-bottom: 15px;
+}
+
+.reservation-container p {
+  color: #ddd;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  color: #f4b400;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: #222;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 10px #f4b400;
+}
+
+textarea {
+  resize: none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .reservation-container {
+    padding: 30px 20px;
+  }
+
+  .reservation-container h1 {
+    font-size: 2rem;
+  }
+}
+
+.message {
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.4s ease;
+    }
+
+    .message.error {
+      background: #2e0000;
+      color: #ff4d4f;
+      border: 1px solid #ff4d4f;
+    }
+
+    .message.success {
+      background: #2a1a00;
+      color: #f4b400;
+      border: 1px solid #f4b400;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(-5px);}
+      to {opacity:1; transform: translateY(0);}
+    }

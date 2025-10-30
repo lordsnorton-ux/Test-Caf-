@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Bar - Café du Commerce</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style2.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Café du Commerce</div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="bar.html" class="active">Bar</a></li>
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+    </ul>
+
+    <!-- Bouton hamburger (mobile) -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HERO BAR : Bannière avec image de fond -->
+  <section class="bar-hero">
+    <div class="bar-hero-overlay"></div>
+    <div class="bar-hero-content">
+      <h1>Bienvenue au <span>Bar du Café du Commerce</span></h1>
+      <p>Découvrez nos cocktails signatures dans une ambiance chaleureuse et raffinée</p>
+    </div>
+  </section>
+
+  <!-- SECTION INTRO BAR -->
+  <section class="bar-intro">
+    <div class="container">
+      <div class="bar-intro-content">
+        <div class="bar-intro-text">
+          <h2>L'Art du Cocktail</h2>
+          <p>Notre bar propose une sélection exclusive de cocktails créés par nos mixologues passionnés. Que vous soyez amateur de classiques intemporels ou en quête de créations originales, vous trouverez votre bonheur parmi notre carte.</p>
+          <p>Chaque cocktail est préparé avec des ingrédients frais et de qualité premium, dans une ambiance tamisée et conviviale.</p>
+        </div>
+        <div class="bar-intro-image">
+          <img src="images/bar.jpg" alt="Notre bar">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION COCKTAILS : Identique à index.html -->
+  <section id="cocktails-bar" class="cocktails">
+    <h2>Nos Cocktails Signature</h2>
+    <div class="grid">
+      
+      <!-- Cocktail 1 : Mojito -->
+      <div class="card" data-cocktail="mojito">
+        <img src="images/mojito.jpg" alt="Mojito">
+        <h3>Mojito</h3>
+        <p class="preview">Rhum blanc, menthe fraîche, citron vert...</p>
+      </div>
+
+      <!-- Cocktail 2 : Apple Martini -->
+      <div class="card" data-cocktail="apple">
+        <img src="images/Apple M.jpg" alt="Apple Martini">
+        <h3>Apple Martini</h3>
+        <p class="preview">Vodka, liqueur de pomme verte...</p>
+      </div>
+
+      <!-- Cocktail 3 : Piña Colada -->
+      <div class="card" data-cocktail="pina">
+        <img src="images/pina.jpg" alt="Piña Colada">
+        <h3>Piña Colada</h3>
+        <p class="preview">Rhum blanc, crème de coco, ananas...</p>
+      </div>
+
+      <!-- Cocktail 4 : Rhum Cola -->
+      <div class="card" data-cocktail="rhum">
+        <img src="images/rhum-cola.png" alt="Rhum Cola">
+        <h3>Rhum Cola</h3>
+        <p class="preview">Rhum ambré, cola, citron vert...</p>
+      </div>
+
+      <!-- Cocktail 5 : Cocktail Maison -->
+      <div class="card" data-cocktail="maison">
+        <img src="images/fraise.png" alt="CocktailMaison">
+        <h3>Cocktail Maison</h3>
+        <p class="preview">Notre création signature exclusive...</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- PANEL LATÉRAL : Détails du cocktail -->
+  <div class="cocktail-panel" id="cocktailPanel">
+    <button class="close-btn" id="closePanel">✕</button>
+    
+    <div class="panel-content">
+      <img id="panelImage" src="" alt="">
+      <h2 id="panelTitle">Nom du cocktail</h2>
+      <p id="panelDescription">Description...</p>
+      
+      <div class="panel-details">
+        <h3>Ingrédients</h3>
+        <ul id="panelIngredients">
+          <!-- Liste remplie dynamiquement -->
+        </ul>
+        
+        <div class="panel-price">
+          <span class="price" id="panelPrice">0€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay sombre derrière le panel -->
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <!-- SECTION AMBIANCE -->
+  <section class="bar-ambiance">
+    <div class="container">
+      <h2>Une Ambiance Unique</h2>
+      <div class="ambiance-grid">
+        <div class="ambiance-card">
+          <i class="bi bi-music-note-beamed"></i>
+          <h3>Musique Live</h3>
+          <p>Profitez de soirées jazz et acoustiques tous les vendredis</p>
+        </div>
+        <div class="ambiance-card">
+          <i class="bi bi-clock-history"></i>
+          <h3>Happy Hour</h3>
+          <p>-30% sur tous les cocktails de 18h à 20h</p>
+        </div>
+        <div class="ambiance-card">
+          <i class="bi bi-people"></i>
+          <h3>Privatisation</h3>
+          <p>Organisez vos événements dans notre espace privé</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Café du Commerce – Tous droits réservés</p>
+    
+    <ul class="social-links">
+      <li><a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+        <i class="bi bi-youtube"></i>
+      </a></li>
+      <li><a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <i class="bi bi-facebook"></i>
+      </a></li>
+      <li><a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a></li>
+      <li><a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a></li>
+    </ul>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script src="wow.js"></script>
+</body>
+</html>
